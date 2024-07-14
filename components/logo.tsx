@@ -11,12 +11,17 @@ export const Logo = () => {
   return (
     <Link href="/">
       <div className="hover: opacity-75 transition items-center gap-x-2 hidden md:flex">
-        <Image src="/trello-logo.svg" height={30} width={30} alt="Logo" />
-        <p
+        <Image
+          src="/images/trello-logo.svg"
+          height={40}
+          width={90}
+          alt="Logo"
+        />
+        {/* <p
           className={cn('text-lg text-neutral-700 pb-1', headingFont.className)}
         >
           Taskify
-        </p>
+        </p> */}
       </div>
     </Link>
   );
