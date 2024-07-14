@@ -1,12 +1,17 @@
+import localFont from 'next/font/local';
+import { Poppins } from 'next/font/google';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import localFont from 'next/font/local';
-import { Montserrat } from 'next/font/google';
 import { Button } from '@/components/ui/button';
 import { Medal } from 'lucide-react';
 
 const headingFont = localFont({
   src: '../../public/fonts/CalSans-SemiBold.woff',
+});
+
+const textFont = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
 const MarketingPage = () => {
@@ -29,7 +34,12 @@ const MarketingPage = () => {
           work forward.
         </div>
       </div>
-      <div className="text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto">
+      <div
+        className={cn(
+          'text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto',
+          textFont.className
+        )}
+      >
         Collaborate manage projects, and reach new productivity peaks. From high
         rises to the home office, the way your team works is unique - accomplish
         it all with Taskify
