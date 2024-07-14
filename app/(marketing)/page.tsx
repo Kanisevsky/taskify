@@ -1,8 +1,22 @@
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import localFont from 'next/font/local';
+import { Montserrat } from 'next/font/google';
+import { Button } from '@/components/ui/button';
 import { Medal } from 'lucide-react';
+
+const headingFont = localFont({
+  src: '../../public/fonts/CalSans-SemiBold.woff',
+});
 
 const MarketingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div
+      className={cn(
+        'flex items-center justify-center flex-col',
+        headingFont.className
+      )}
+    >
       <div className="flex items-center justify-center flex-col">
         <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
           <Medal className="h-6 w-6 mr-2" />
@@ -20,6 +34,9 @@ const MarketingPage = () => {
         rises to the home office, the way your team works is unique - accomplish
         it all with Taskify
       </div>
+      <Button className="mt-6" size="lg">
+        <Link href="/sign-up">Get Taskify for Free</Link>
+      </Button>
     </div>
   );
 };
