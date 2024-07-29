@@ -36,7 +36,9 @@ const Navbar = () => {
             },
           }}
         />
-        <UserButton />
+        <UserButton
+          appearance={{ elements: { avatarBox: { height: 30, width: 30 } } }}
+        />
       </div>
     </nav>
   );
