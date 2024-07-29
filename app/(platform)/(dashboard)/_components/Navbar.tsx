@@ -1,6 +1,7 @@
 import { Plus } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
+import { OrganizationSwitcher, UserButton } from '@clerk/nextjs';
 
 const Navbar = () => {
   return (
@@ -18,6 +19,24 @@ const Navbar = () => {
         <Button size="sm" className="rounded-sm block md:hidden">
           <Plus className="h-4 w-4" />
         </Button>
+      </div>
+      <div className="ml-auto flex items-center gap-x-2">
+        <OrganizationSwitcher
+          hidePersonal
+          afterCreateOrganizationUrl="/organization/:id"
+          afterLeaveOrganizationUrl="/select-org"
+          afterSelectOrganizationUrl="/organization/:id"
+          appearance={{
+            elements: {
+              rootBox: {
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              },
+            },
+          }}
+        />
+        <UserButton />
       </div>
     </nav>
   );
