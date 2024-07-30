@@ -40,6 +40,7 @@ const NavItem = ({
               alt="organization cover image"
             />
           </div>
+          <span className="font-medium text-sm">{organization.name}</span>
         </div>
       </AccordionTrigger>
     </AccordionItem>
