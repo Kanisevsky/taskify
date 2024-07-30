@@ -61,6 +61,7 @@ const Sidebar = ({ storageKey = 't-sidebar-state' }: SidebarProps) => {
           </Link>
         </Button>
       </div>
+      <Accordion type="multiple"></Accordion>
     </>
   );
 };
