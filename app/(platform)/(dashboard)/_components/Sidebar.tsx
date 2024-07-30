@@ -8,6 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Accordion } from '@/components/ui/accordion';
 import Link from 'next/link';
+import NavItem, { Organization } from './NavItem';
 interface SidebarProps {
   storageKey?: string;
 }
@@ -67,7 +68,13 @@ const Sidebar = ({ storageKey = 't-sidebar-state' }: SidebarProps) => {
         defaultValue={defaultAccordionValue}
       >
         {userMemberships.data.map(({ organization }) => (
-          <p key={organization.id}>{organization.id}</p>
+          <NavItem
+            key={organization.id}
+            isActive={activeOrganization?.id === organization.id}
+            isExpanded={expanded[organization.id]}
+            organization={organization as Organization}
+            onExpand={onExpand}
+          />
         ))}
       </Accordion>
     </>
